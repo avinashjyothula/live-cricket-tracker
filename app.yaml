@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: live-cricket-score-container
-          image: us-central1-docker.pkg.dev/kinetic-horizon-466218-t1/live-cricket-tracker:latest
+          image: gcr.io/kinetic-horizon-466218-t1/live-cricket-tracker:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
