@@ -1,9 +1,9 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/kinetic-horizon-466218-t1/live-cricket-tracker:$SHORT_SHA', '.']
+    args: ['build', '-t', 'gcr.io/kinetic-horizon-466218-t1/live-cricket-tracker:latest', '.']
 
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/kinetic-horizon-466218-t1/live-cricket-tracker:$SHORT_SHA']
+    args: ['push', 'gcr.io/kinetic-horizon-466218-t1/live-cricket-tracker:latest']
 
   -  name: "gcr.io/cloud-builders/gke-deploy"
      args:
@@ -12,7 +12,7 @@ steps:
      - --location=us-central1
      - --cluster=autopilot-cluster-1
 images:
-  - 'gcr.io/kinetic-horizon-466218-t1/live-cricket-tracker:$SHORT_SHA'
+  - 'gcr.io/kinetic-horizon-466218-t1/live-cricket-tracker:latest'
 
 options:
   logging: CLOUD_LOGGING_ONLY
